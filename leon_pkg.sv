@@ -242,7 +242,7 @@ package leon_package;
                         ay.rd = inst[29:25];
                         ay.op3 = inst[24:19];
                         ay.rs1 = inst[18:14];
-                        if (ay.i)
+                        if (!(ay.i))
                         //format 3 register register
                            begin	
                               ay.asi = inst[12:5];

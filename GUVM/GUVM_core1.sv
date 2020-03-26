@@ -1,7 +1,5 @@
 `timescale 10ns/1ns
-interface GUVM_interface(
-    //logic clk
-	);
+interface GUVM_interface(logic clk);
 	   
     parameter N_EXT_PERF_COUNTERS =  0;
     parameter INSTR_RDATA_WIDTH   = 32;
@@ -114,7 +112,7 @@ interface GUVM_interface(
 		clock_en_i            = 1'b1;
 		test_en_i             = 1'b0;
 		fregfile_disable_i    = 1'b1;
-		boot_addr_i           = 32'h0000000A;
+		//boot_addr_i           = 32'h0000000A;
 		core_id_i             = 4'h0;
 		cluster_id_i          = 6'h0;
 		instr_gnt_i           = 1'b1;
