@@ -66,6 +66,7 @@ class GUVM_driver extends uvm_driver #(GUVM_sequence_item);
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
                 $display("rs1 address = %0d and rs2 address = %0d and rd address = %0d", cmd.inst[18:14], cmd.inst[4:0], cmd.inst[29:25]);
                 $display("is immediate ?? %b", cmd.inst[13]);
+                $display("11111111111111111111111 op1= %0d op2= %0d",cmd.operand1,cmd.operand2);
                 // display riscy
             /*$display("driver instruction fetch");
             $display("inst is: %b %b %b %b %b %b", cmd.inst[31:26], cmd.inst[25:20], cmd.inst[19:15], cmd.inst[14:12], cmd.inst[11:7], cmd.inst[6:0]);

@@ -1,10 +1,3 @@
-`include "uvm_macros.svh"
-//`include "GUVM_sequence.sv"
-//`include "leon_pkg.sv"
-//`include "riscy_pkg.sv"
-//`include "amber_pkg.sv"
-import uvm_pkg::*;
-import target_package::*;
 `uvm_analysis_imp_decl(_mon_trans)
 `uvm_analysis_imp_decl(_drv_trans)
 
@@ -16,8 +9,8 @@ class GUVM_scoreboard extends uvm_scoreboard;
     //GUVM_sequence_item trans, input_trans;
 
     // analysis implementation ports
-   uvm_analysis_imp_mon_trans #(GUVM_sequence_item,GUVM_scoreboard) Mon2Sb_port;
-    uvm_analysis_imp_drv_trans #(GUVM_result_transaction,GUVM_scoreboard) Drv2Sb_port;
+   uvm_analysis_imp_mon_trans #(GUVM_result_transaction,GUVM_scoreboard) Mon2Sb_port;
+    uvm_analysis_imp_drv_trans #(GUVM_sequence_item,GUVM_scoreboard) Drv2Sb_port;
 
     // TLM FIFOs to store the actual and expected transaction values
     uvm_tlm_fifo #(GUVM_sequence_item)  drv_fifo;
@@ -53,6 +46,7 @@ class GUVM_scoreboard extends uvm_scoreboard;
 		  GUVM_result_transaction res_trans;
 		  bit [31:0] h1,i1,i2,imm,registered_inst;
 		  integer i;
+		  integer valid;
 		  //bit [19:0] sign;
 		  forever begin
 		  	$display("Scoreboard started");
@@ -60,8 +54,8 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			mon_fifo.get(res_trans);
 		 // `uvm_info ("READ_INSTRUCTION ", $sformatf("Expected Instruction=%h \n", exp_trans.inst), UVM_LOW)
 			//mon_fifo.get(out_trans);
-			i1=cmd_trans.op1;
-			i2=cmd_trans.op2;
+			i1=cmd_trans.operand1;
+			i2=cmd_trans.operand2;
 			registered_inst=cmd_trans.inst;
 			$display("Sb: inst is %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]);
 		  	$display("Sb: op1=%0d ", i1);
@@ -69,32 +63,32 @@ class GUVM_scoreboard extends uvm_scoreboard;
 				//opcode reg_instruction;
 				//`uvm_info ("SCOREBOARD ENTERED ",$sformatf("HELLO IN SCOREBOARD"), UVM_LOW);
 				//target_package::reg_instruction = target_package::reg_instruction.first;
+			valid = 0;
             for(i=0;i<supported_instructions;i++)
 				begin
 					if (xis1(cmd_trans.inst,si_a[i])) begin
-						break;
-						end
-					else begin
-					`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]))
-					$display("Sb: instruction not in pkg");	
+						valid = 1;
 					end
 					//$display("LOOP ENTERED");
                 	//$display("reg_instruction  ::  Value of  %0s is = %0d",target_package::reg_instruction.name(),target_package::reg_instruction);
 				end
-				casex (si_a[i]) 
-					A:begin 
-						h1=i1+i2;				
-						if((h1)==(res_trans.result))
-						begin
-						`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d ",res_trans.result, h1), UVM_HIGH)
-						end
-						else
-						begin
-						`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d ",res_trans.result, h1))
-						end
-					  end
-					default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h",si_a[i]))
-				endcase
-	  		end 
+			if (valid == 0) begin
+			`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", cmd_trans.inst[31:28], cmd_trans.inst[27:24], cmd_trans.inst[23:20], cmd_trans.inst[19:16], cmd_trans.inst[15:12], cmd_trans.inst[11:8], cmd_trans.inst[7:4], cmd_trans.inst[3:0]))
+			end
+			casex (si_a[i]) 
+				A:begin 
+					h1=i1+i2;				
+					if((h1)==(res_trans.result))
+					begin
+					`uvm_info ("ADDITION_PASS ", $sformatf("Actual Calculation=%d Expected Calculation=%d ",res_trans.result, h1), UVM_LOW)
+					end
+					else
+					begin
+					`uvm_error("ADDITION_FAIL", $sformatf("Actual Calculation=%d Expected Calculation=%d ",res_trans.result, h1))
+					end
+				  end
+				default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h",si_a[i]))
+			endcase
+ 		end 
    endtask
 endclass : GUVM_scoreboard	
