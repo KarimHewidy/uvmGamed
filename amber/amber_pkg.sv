@@ -2,32 +2,26 @@ package target_package;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
     typedef enum logic[31:0] {
-        LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
-        SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
+        LW = 32'b111101101001xxxxxxxxxxxxxxxxxxxx,
+        SW = 32'b111001011000xxxxxxxxxxxxxxxxxxxx,
         A  = 32'b1110000010000xxx0xxx000000000xxx,
-        Store = 32'b11100101100100000xxx000000000000,
-        Load =  32'b11110110100000000xxx000000000000 
+        Store = 32'b11100101100000000xxx000000000000,
+        Load =  32'b1111011010010xxx0xxx000000000xxx 
     } opcode;
-    /*
-    LW = 32'b111101101000xxxxxxxxxxxxxxxxxxxx,
-        SW = 32'b111001011001xxxxxxxxxxxxxxxxxxxx,
-        A  = 32'b111000001000xxxxxxxx00000000xxxx
-
-    */
 
     opcode si_a[];
     integer supported_instructions;
     opcode reg_instruction;
     `include"GUVM.sv"
-    //`include "GUVM_sequence_item.sv"
-   // `include "target_sequence_item.sv"
-    //`include "GUVM_sequence.sv"
-    //`include "GUVM_driver.sv"
-    //`include "GUVM_monitor.sv"
-    //`include "GUVM_scoreboard.sv"
-   // `include "GUVM_agent.sv"
-    //`include "GUVM_env.sv"
-    //`include "GUVM_test.sv"
+    /*`include "GUVM_sequence_item.sv"
+    `include "target_sequence_item.sv"
+    `include "GUVM_sequence.sv"
+    `include "GUVM_driver.sv"
+    `include "GUVM_monitor.sv"
+    `include "GUVM_scoreboard.sv"
+    `include "GUVM_agent.sv"
+    `include "GUVM_env.sv"
+    `include "GUVM_test.sv"*/
 
     function void fill_si_array();
     // fill supported instruction array
@@ -42,6 +36,7 @@ package target_package;
             si_i = si_i.first();
             for(integer i=0; i < supported_instructions; i++)
                 begin
+                    $display("si_a[%0d] = %s",i,si_i.name);
                     si_a[i] = si_i;
                     si_i = si_i.next();
                 end
@@ -199,5 +194,18 @@ package target_package;
                 $fatal(1, "failed to cast transaction to amber's transaction");
             return k;
     endfunction
+
+    function bit xis1 (logic[31:0] a,logic[31:0] b);
+        logic x;
+        x = (a == b);
+        if (x === 1'bx)
+            begin
+                return 1'b1;
+            end
+        else
+            begin
+                return 1'b0;
+            end
+    endfunction: xis1
 
 endpackage

@@ -136,4 +136,17 @@ package target_package;
 		return k;
 	endfunction
 
+	function bit xis1 (logic[31:0] a,logic[31:0] b);
+		logic x;
+		x = (a == b);
+		if (x === 1'bx)
+			begin
+				return 1'b1;
+			end
+		else
+			begin
+				return 1'b0;
+			end
+	   endfunction : xis1
+
 endpackage
