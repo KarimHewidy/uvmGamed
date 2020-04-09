@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 dC:/Users/kemo_/OneDrive/Documents/GitHub/uvmGamed
 T_opt
-!s110 1586385318
-VnBV]j^lnR`70=Jm3]02A93
+!s110 1586445592
+VXd=JSTWRCbk=[=9L]LoF=2
 04 3 4 work top fast 0
-=1-6cc21767d562-5e8e51a3-188-2fe4
+=1-6cc21767d562-5e8f3d16-214-24e0
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OL;O;10.4e;61
@@ -36,7 +36,7 @@ Z8 8riscy/DUT/riscv_alu.sv
 Z9 Friscy/DUT/riscv_alu.sv
 L0 1157
 Z10 OL;L;10.4e;61
-Z11 !s108 1586385305.000000
+Z11 !s108 1586445582.000000
 Z12 !s107 riscy\DUT\riscv_config.sv|riscy\DUT\apu_macros.sv|riscy/DUT/riscv_tracer.sv|riscy/DUT/riscv_register_file.sv|riscy/DUT/riscv_prefetch_L0_buffer.sv|riscy/DUT/riscv_prefetch_buffer.sv|riscy/DUT/riscv_pmp.sv|riscy/DUT/riscv_mult.sv|riscy/DUT/riscv_load_store_unit.sv|riscy/DUT/riscv_L0_buffer.sv|riscy/DUT/riscv_int_controller.sv|riscy/DUT/riscv_if_stage.sv|riscy/DUT/riscv_id_stage.sv|riscy/DUT/riscv_hwloop_regs.sv|riscy/DUT/riscv_hwloop_controller.sv|riscy/DUT/riscv_fetch_fifo.sv|riscy/DUT/riscv_ex_stage.sv|riscy/DUT/riscv_decoder.sv|riscy/DUT/riscv_cs_registers.sv|riscy/DUT/riscv_core.sv|riscy/DUT/riscv_controller.sv|riscy/DUT/riscv_compressed_decoder.sv|riscy/DUT/riscv_apu_disp.sv|riscy/DUT/riscv_alu_div.sv|riscy/DUT/riscv_alu_basic.sv|riscy/DUT/riscv_alu.sv|riscy/DUT/register_file_test_wrap.sv|riscy/DUT/fpnew_top.sv|riscy/DUT/cluster_clock_gating.sv|riscy/DUT/apu_macros.sv|riscy/DUT/apu_core_package.sv|riscy/DUT/riscv_tracer_defines.sv|riscy/DUT/riscv_config.sv|riscy/DUT/riscv_defines.sv|riscy/DUT/fpnew_pkg.sv|
 Z13 !s90 -f|riscy/dut_riscy.f|
 !i113 0
@@ -68,7 +68,7 @@ R13
 R14
 Xapu_core_package
 R1
-Z15 !s110 1586385305
+Z15 !s110 1586445582
 !i10b 1
 !s100 8iVNfekdLB6`NYYZYz32]2
 IS0ER1Rln;h`_FBa3Fa8n=1
@@ -184,16 +184,16 @@ R14
 YGUVM_interface
 R1
 Z20 DXx6 mtiUvm 7 uvm_pkg 0 22 02@e1POGTiN=><];7MkU?0
-Z21 DXx4 work 14 target_package 0 22 Zkd3a:ZPLCdl9d>38BJj71
-!s110 1586385312
+Z21 DXx4 work 14 target_package 0 22 Ac0z9cD2;5e8B<8PO``Al2
+!s110 1586445588
 !i10b 1
-!s100 llRB1Yj58iXGn8aW=k>UR3
-IieghDPHUNc=56HKO_TlMF0
+!s100 S7Th4YjjB=mSkhS:iGo[T2
+IEzo8iS114mL01iBHR^KS30
 R5
 !s105 riscy_interface_sv_unit
 S1
 R0
-R7
+w1586281383
 8riscy/riscy_interface.sv
 Friscy/riscy_interface.sv
 L0 1
@@ -201,7 +201,7 @@ R10
 r1
 !s85 0
 31
-!s108 1586385311.000000
+!s108 1586445587.000000
 !s107 riscy/riscy_interface.sv|
 !s90 riscy/riscy_interface.sv|
 !i113 0
@@ -306,7 +306,7 @@ R13
 R14
 vriscv_alu_div
 R1
-!s110 1586385306
+R15
 !i10b 1
 !s100 VYddzQJ>no4S_bJeQ2g:P1
 Ii=gS8FgiGlOaZNCNjE@]U1
@@ -751,7 +751,7 @@ R13
 R14
 vriscv_fetch_fifo
 R1
-Z51 !s110 1586385309
+Z51 !s110 1586445585
 !i10b 1
 !s100 ><[YT1^aY6I?OHjXkeR9B3
 IQMlBcVQKheTFm;?;oooeJ0
@@ -969,7 +969,7 @@ R13
 R14
 vriscv_L0_buffer
 R1
-Z58 !s110 1586385310
+Z58 !s110 1586445586
 !i10b 1
 !s100 8Q4cEL_84MYD`=R3P3E;`3
 I17RKe1cDnkWFN3EAXA5d?1
@@ -1260,14 +1260,14 @@ R14
 Xtarget_package
 R1
 R20
-!s110 1586385311
+!s110 1586445587
 !i10b 1
-!s100 X7JLX>=Uz2hABFXi1SXSh3
-IZkd3a:ZPLCdl9d>38BJj71
-VZkd3a:ZPLCdl9d>38BJj71
+!s100 ES]e1TV6^S]2c9ZInb=WI1
+IAc0z9cD2;5e8B<8PO``Al2
+VAc0z9cD2;5e8B<8PO``Al2
 S1
 R0
-w1586385093
+w1586445568
 Friscy/riscy_pkg.sv
 Z66 FC:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
 Z67 FC:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
@@ -1290,8 +1290,9 @@ FGUVM/GUVM_sequence.sv
 FGUVM/GUVM_driver.sv
 FGUVM/GUVM_monitor.sv
 FGUVM/GUVM_scoreboard.sv
-Friscy/GUVM_tb.sv
+FGUVM/GUVM_tb.sv
 FGUVM/inst_h/add.svh
+FGUVM/inst_h/test.svh
 FGUVM/GUVM_agent.sv
 FGUVM/GUVM_env.sv
 FGUVM/GUVM_test.sv
@@ -1300,8 +1301,8 @@ R10
 r1
 !s85 0
 31
-!s108 1586385310.000000
-!s107 GUVM/GUVM_test.sv|GUVM/GUVM_env.sv|GUVM/GUVM_agent.sv|GUVM/inst_h/add.svh|riscy/GUVM_tb.sv|GUVM/GUVM_scoreboard.sv|GUVM/GUVM_monitor.sv|GUVM/GUVM_driver.sv|GUVM/GUVM_sequence.sv|riscy/riscy_seq_item.sv|riscy/target_sequence_item.sv|GUVM/GUVM_sequence_item.sv|GUVM/GUVM_result_transaction.sv|GUVM.sv|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|riscy/riscy_pkg.sv|riscy/target_pkg.sv|
+!s108 1586445586.000000
+!s107 GUVM/GUVM_test.sv|GUVM/GUVM_env.sv|GUVM/GUVM_agent.sv|GUVM/inst_h/test.svh|GUVM/inst_h/add.svh|GUVM/GUVM_tb.sv|GUVM/GUVM_scoreboard.sv|GUVM/GUVM_monitor.sv|GUVM/GUVM_driver.sv|GUVM/GUVM_sequence.sv|riscy/riscy_seq_item.sv|riscy/target_sequence_item.sv|GUVM/GUVM_sequence_item.sv|GUVM/GUVM_result_transaction.sv|GUVM.sv|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|riscy/riscy_pkg.sv|riscy/target_pkg.sv|
 !s90 +incdir+riscy+GUVM+GUVM/inst_h|riscy/target_pkg.sv|
 !i113 0
 R14
@@ -1310,7 +1311,7 @@ vtop
 R1
 R20
 R21
-!s110 1586385313
+!s110 1586445589
 !i10b 1
 !s100 I7;P@]T5@K0eFAoB^_TI61
 I3WScR=eon5^6;m0Co:kTX2
@@ -1338,7 +1339,7 @@ R10
 r1
 !s85 0
 31
-!s108 1586385312.000000
+!s108 1586445588.000000
 !s107 C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.4e/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|riscy/top.sv|
 !s90 riscy/top.sv|
 !i113 0
