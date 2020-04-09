@@ -7,7 +7,7 @@ puts "Hello, World; - With  a semicolon inside the quotes"
 
 vlog -f riscy/dut_riscy.f
 
-vlog +incdir+riscy+GUVM riscy/target_pkg.sv 
+vlog +incdir+riscy+GUVM+GUVM/inst_h riscy/target_pkg.sv 
 vlog riscy/riscy_interface.sv
 vlog riscy/top.sv
 
