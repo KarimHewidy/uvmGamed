@@ -1,5 +1,5 @@
 interface GUVM_interface;
-    import target_package::*; // importing leon core package
+    import target_package::*; // importing riscy core package
     
     // core paramerters
     parameter N_EXT_PERF_COUNTERS =  0;
@@ -134,6 +134,11 @@ interface GUVM_interface;
             #10 clk_i=~clk_i;
         end
     endtask
+
+    function logic[31:0] get_pc();
+        $display("current_pc = %b", instr_addr_o);
+        return instr_addr_o;
+    endfunction
     
     /*task add(logic [4:0] r1, logic [4:0] r2, logic [4:0] rd);
         send_inst({7'b0000000, r2, r1, 3'b000, rd, 7'b0110011});
@@ -147,6 +152,7 @@ interface GUVM_interface;
         clock_en_i            = 1'b1;
         test_en_i             = 1'b0;
         fregfile_disable_i    = 1'b1;
+		boot_addr_i			  = 32'h00000000;
 
         core_id_i             = 4'h0;
         cluster_id_i          = 6'h0;

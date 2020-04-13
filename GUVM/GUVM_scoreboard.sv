@@ -66,12 +66,15 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			if(valid == 0) begin // if valid still zero then instruction isn't found in opcodes array
 				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]))
 			end
-			casex (si_a[i].name) // determining which instuction we verify  
+			case (si_a[i].name) // determining which instuction we verify  
 				"A":begin // add two registers
 					verify_add(cmd_trans,res_trans);
 				end
 				"test":begin // yaba a7la temp 3lek
 					verify_test(cmd_trans,res_trans);
+				end
+				"Jal":begin // Jump and link
+					verify_JumpAndLink(cmd_trans,res_trans);
 				end
 				default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h", si_a[i]))
 			endcase
