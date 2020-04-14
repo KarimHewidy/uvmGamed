@@ -1,6 +1,6 @@
 # do riscy/run_riscy.do
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 00:21:28 on Apr 13,2020
+# Start time: 21:38:37 on Apr 14,2020
 # vlog "+incdir+riscy+GUVM+GUVM/inst_h" riscy/target_pkg.sv 
 # -- Compiling package target_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -9,21 +9,23 @@
 # 
 # Top level modules:
 # 	--none--
-# End time: 00:21:29 on Apr 13,2020, Elapsed time: 0:00:01
+# End time: 21:38:38 on Apr 14,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 00:21:29 on Apr 13,2020
+# Start time: 21:38:38 on Apr 14,2020
 # vlog riscy/riscy_interface.sv 
 # -- Compiling interface GUVM_interface
 # -- Importing package target_package
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Warning: riscy/riscy_interface.sv(121): (vlog-2240) Treating stand-alone use of function 'receive_data' as an implicit VOID cast.
+# 
 # 
 # Top level modules:
 # 	--none--
-# End time: 00:21:30 on Apr 13,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 21:38:39 on Apr 14,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
 # QuestaSim-64 vlog 10.4e Compiler 2016.04 Apr  9 2016
-# Start time: 00:21:30 on Apr 13,2020
+# Start time: 21:38:39 on Apr 14,2020
 # vlog riscy/top.sv 
 # -- Compiling module top
 # -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
@@ -33,11 +35,12 @@
 # 
 # Top level modules:
 # 	top
-# End time: 00:21:31 on Apr 13,2020, Elapsed time: 0:00:01
+# End time: 21:38:40 on Apr 14,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim top 
-# Start time: 00:21:31 on Apr 13,2020
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# 1
+# vsim -novopt top 
+# Start time: 21:38:40 on Apr 14,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # 
 # //  Questa Sim-64
 # //  Version 10.4e win64 Apr  9 2016
@@ -54,30 +57,54 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
+# Refreshing C:/Users/kemo_/OneDrive/Documents/GitHub/uvmGamed/work.top
+# Refreshing C:/Users/kemo_/OneDrive/Documents/GitHub/uvmGamed/work.target_package
 # Loading sv_std.std
 # Loading mtiUvm.uvm_pkg
-# Loading work.target_package(fast)
-# Loading work.top(fast)
-# Loading work.fpnew_pkg(fast)
-# Loading work.riscv_defines(fast)
-# Loading work.riscv_cs_registers_sv_unit(fast)
-# Loading work.riscv_mult_sv_unit(fast)
-# Loading work.riscv_alu_sv_unit(fast)
-# Loading work.apu_core_package(fast)
-# Loading work.riscv_ex_stage_sv_unit(fast)
-# Loading work.riscv_int_controller_sv_unit(fast)
-# Loading work.riscv_controller_sv_unit(fast)
-# Loading work.riscv_decoder_sv_unit(fast)
-# Loading work.riscv_id_stage_sv_unit(fast)
-# Loading work.riscv_compressed_decoder_sv_unit(fast)
-# Loading work.riscv_if_stage_sv_unit(fast)
-# Loading work.riscv_core_sv_unit(fast)
-# Loading work.riscv_core(fast)
-# Loading work.riscv_tracer_defines(fast)
-# Loading work.riscv_tracer_sv_unit(fast)
-# Loading work.riscv_tracer(fast)
-# Loading mtiUvm.questa_uvm_pkg(fast)
-# Loading work.GUVM_interface(fast)
+# Loading work.target_package
+# Loading work.top
+# Refreshing C:/Users/kemo_/OneDrive/Documents/GitHub/uvmGamed/work.GUVM_interface
+# Loading work.GUVM_interface
+# Loading work.fpnew_pkg
+# Loading work.riscv_defines
+# Loading work.apu_core_package
+# Loading work.riscv_core_sv_unit
+# Loading work.riscv_core
+# Loading work.cluster_clock_gating
+# Loading work.riscv_if_stage_sv_unit
+# Loading work.riscv_if_stage
+# Loading work.riscv_hwloop_controller
+# Loading work.riscv_compressed_decoder_sv_unit
+# Loading work.riscv_compressed_decoder
+# Loading work.riscv_id_stage_sv_unit
+# Loading work.riscv_id_stage
+# Loading work.register_file_test_wrap
+# Loading work.riscv_register_file
+# Loading work.riscv_decoder_sv_unit
+# Loading work.riscv_decoder
+# Loading work.riscv_controller_sv_unit
+# Loading work.riscv_controller
+# Loading work.riscv_int_controller_sv_unit
+# Loading work.riscv_int_controller
+# Loading work.riscv_hwloop_regs
+# Loading work.riscv_ex_stage_sv_unit
+# Loading work.riscv_ex_stage
+# Loading work.riscv_alu_sv_unit
+# Loading work.riscv_alu
+# Loading work.alu_popcnt
+# Loading work.alu_ff
+# Loading work.riscv_mult_sv_unit
+# Loading work.riscv_mult
+# Loading work.riscv_load_store_unit
+# Loading work.riscv_cs_registers_sv_unit
+# Loading work.riscv_cs_registers
+# Loading work.riscv_tracer_defines
+# Loading work.riscv_tracer_sv_unit
+# Loading work.riscv_tracer
+# Loading mtiUvm.questa_uvm_pkg
+# Loading work.riscv_prefetch_buffer
+# Loading work.riscv_fetch_fifo
+# Loading work.riscv_alu_div
 # Loading C:/questasim64_10.4e/uvm-1.1d\win64\uvm_dpi.dll
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -134,37 +161,38 @@
 # inst is 0001 0010 0001 0101 0011 0101 0110 1111
 # rs1 address = x and rs2 address = x and rd address = 10
 # op1= 2985317987 op2= 1189058957
-# current_pc = 00000000000000000000000010100000
-# current_pc = 00000000000001010011100110111100
+# current_pc = 00000000000000000000000010100000                        980
+# current_pc = 00000000000001010011100110111100                       1000
 # driver store fetch
 # inst is 0000 0000 1010 0000 0010 0000 0010 0011
 # There should be no rvalid when we the LSU is IDLE                 1050
-# received result: 00000000000000000000000010100000
-# result = 160
+# There should be no rvalid when we the LSU is IDLE                 1070
+# received result: 00000000000000000000000010100000                       1100
+# result = 32d'160      32h'000000a0
 # Sb: inst is 0001 0010 0001 0101 0011 0101 0110 1111
 # Sb: op1=2985317987 
 # Sb: op2=1189058957
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 1060: reporter [JumpAndLink_FAIL] Actual register result=       160 Expected register result=       164 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 1060: reporter [JumpAndLink_FAIL] Actual next pc=    342460 Expected next pc=    171312 
+# offset = 32h'00053920 	32b'00000000000001010011100100100000
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 1100: reporter [JumpAndLink_PASS] Actual register result=       160 Expected register result=       160 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 1100: reporter [JumpAndLink_PASS] Actual next pc=    342460 Expected next pc=    342460 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 1070
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 1390
-# ** Warning: There was a grant without a request
-#    Time: 1390 ns Started: 1390 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 1410
-# ** Warning: There was a grant without a request
-#    Time: 1410 ns Started: 1410 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 1430
 # ** Warning: There was a grant without a request
 #    Time: 1430 ns Started: 1430 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 1450
+# There should be no rvalid when we the LSU is IDLE                 1430
 # ** Warning: There was a grant without a request
 #    Time: 1450 ns Started: 1450 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 1450
+# ** Warning: There was a grant without a request
+#    Time: 1470 ns Started: 1470 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 1470
+# ** Warning: There was a grant without a request
+#    Time: 1490 ns Started: 1490 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 1490
 # There should be no rvalid when we the LSU is IDLE                 1510
 # There should be no rvalid when we the LSU is IDLE                 1530
+# There should be no rvalid when we the LSU is IDLE                 1550
+# There should be no rvalid when we the LSU is IDLE                 1570
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -174,38 +202,39 @@
 # inst is 0000 0000 1111 0011 1110 0011 0110 1111
 # rs1 address = x and rs2 address = x and rd address = 6
 # op1= 512609597 op2= 1177417612
-# current_pc = 00000000000000000000000010110000
-# current_pc = 00000000000000111110100010111010
+# current_pc = 00000000000000000000000010110000                       2380
+# current_pc = 00000000000000111110100010111010                       2400
 # driver store fetch
 # inst is 0000 0000 0110 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 2410
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                 2450
+# There should be no rvalid when we the LSU is IDLE                 2470
+# There should be no rvalid when we the LSU is IDLE                 2490
+# received result: 00000000000000000000000010110000                       2500
+# result = 32d'176      32h'000000b0
 # Sb: inst is 0000 0000 1111 0011 1110 0011 0110 1111
 # Sb: op1=512609597 
 # Sb: op2=1177417612
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 2420: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 2420: reporter [JumpAndLink_FAIL] Actual next pc=    256186 Expected next pc=    128183 
+# offset = 32h'0003e80e 	32b'00000000000000111110100000001110
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 2500: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 2500: reporter [JumpAndLink_PASS] Actual next pc=    256186 Expected next pc=    256186 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 2430
-# There should be no rvalid when we the LSU is IDLE                 2450
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 2750
 # ** Warning: There was a grant without a request
-#    Time: 2750 ns Started: 2750 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 2770
-# ** Warning: There was a grant without a request
-#    Time: 2770 ns Started: 2770 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 2790
-# ** Warning: There was a grant without a request
-#    Time: 2790 ns Started: 2790 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 2810
-# ** Warning: There was a grant without a request
-#    Time: 2810 ns Started: 2810 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+#    Time: 2830 ns Started: 2830 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 2830
+# ** Warning: There was a grant without a request
+#    Time: 2850 ns Started: 2850 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 2850
+# ** Warning: There was a grant without a request
+#    Time: 2870 ns Started: 2870 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 2870
+# ** Warning: There was a grant without a request
+#    Time: 2890 ns Started: 2890 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 2890
+# There should be no rvalid when we the LSU is IDLE                 2910
+# There should be no rvalid when we the LSU is IDLE                 2930
+# There should be no rvalid when we the LSU is IDLE                 2950
+# There should be no rvalid when we the LSU is IDLE                 2970
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -215,38 +244,39 @@
 # inst is 1110 0010 1111 0111 1000 0100 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 9
 # op1= 3151131255 op2= 1206705039
-# current_pc = 00000000000000000000000010110000
-# current_pc = 11111111111101111000111011011010
+# current_pc = 00000000000000000000000010110000                       3780
+# current_pc = 11111111111101111000111011011010                       3800
 # driver store fetch
 # inst is 0000 0000 1001 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 3770
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                 3850
+# There should be no rvalid when we the LSU is IDLE                 3870
+# There should be no rvalid when we the LSU is IDLE                 3890
+# received result: 00000000000000000000000010110000                       3900
+# result = 32d'176      32h'000000b0
 # Sb: inst is 1110 0010 1111 0111 1000 0100 1110 1111
 # Sb: op1=3151131255 
 # Sb: op2=1206705039
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 3780: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 3780: reporter [JumpAndLink_FAIL] Actual next pc=4294414042 Expected next pc=    772039 
+# offset = 32h'fff78e2e 	32b'11111111111101111000111000101110
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 3900: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 3900: reporter [JumpAndLink_PASS] Actual next pc=4294414042 Expected next pc=4294414042 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 3790
-# There should be no rvalid when we the LSU is IDLE                 3810
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 4110
 # ** Warning: There was a grant without a request
-#    Time: 4110 ns Started: 4110 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 4130
-# ** Warning: There was a grant without a request
-#    Time: 4130 ns Started: 4130 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 4150
-# ** Warning: There was a grant without a request
-#    Time: 4150 ns Started: 4150 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 4170
-# ** Warning: There was a grant without a request
-#    Time: 4170 ns Started: 4170 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 4190
-# There should be no rvalid when we the LSU is IDLE                 4210
+#    Time: 4230 ns Started: 4230 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 4230
+# ** Warning: There was a grant without a request
+#    Time: 4250 ns Started: 4250 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
 # There should be no rvalid when we the LSU is IDLE                 4250
+# ** Warning: There was a grant without a request
+#    Time: 4270 ns Started: 4270 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 4270
+# ** Warning: There was a grant without a request
+#    Time: 4290 ns Started: 4290 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 4290
+# There should be no rvalid when we the LSU is IDLE                 4310
+# There should be no rvalid when we the LSU is IDLE                 4330
+# There should be no rvalid when we the LSU is IDLE                 4350
+# There should be no rvalid when we the LSU is IDLE                 4370
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -256,37 +286,38 @@
 # inst is 1111 0100 0000 0000 0111 1010 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 21
 # op1= 3733858493 op2= 2997298789
-# current_pc = 00000000000000000000000010110000
-# current_pc = 11111111111100000111011111101100
+# current_pc = 00000000000000000000000010110000                       5180
+# current_pc = 11111111111100000111011111101100                       5200
 # driver store fetch
 # inst is 0000 0001 0101 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 5130
-# received result: 00000000000000000000000010110000
-# result = 176
+# There should be no rvalid when we the LSU is IDLE                 5250
+# There should be no rvalid when we the LSU is IDLE                 5270
+# received result: 00000000000000000000000010110000                       5300
+# result = 32d'176      32h'000000b0
 # Sb: inst is 1111 0100 0000 0000 0111 1010 1110 1111
 # Sb: op1=3733858493 
 # Sb: op2=2997298789
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 5140: reporter [JumpAndLink_FAIL] Actual register result=       176 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 5140: reporter [JumpAndLink_FAIL] Actual next pc=4293949420 Expected next pc=    539728 
+# offset = 32h'fff07740 	32b'11111111111100000111011101000000
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 5300: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 5300: reporter [JumpAndLink_PASS] Actual next pc=4293949420 Expected next pc=4293949420 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 5150
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 5470
 # ** Warning: There was a grant without a request
-#    Time: 5470 ns Started: 5470 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 5490
+#    Time: 5630 ns Started: 5630 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 5630
 # ** Warning: There was a grant without a request
-#    Time: 5490 ns Started: 5490 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 5510
+#    Time: 5650 ns Started: 5650 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 5650
 # ** Warning: There was a grant without a request
-#    Time: 5510 ns Started: 5510 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 5530
+#    Time: 5670 ns Started: 5670 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 5670
 # ** Warning: There was a grant without a request
-#    Time: 5530 ns Started: 5530 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 5550
-# There should be no rvalid when we the LSU is IDLE                 5570
-# There should be no rvalid when we the LSU is IDLE                 5590
-# There should be no rvalid when we the LSU is IDLE                 5610
+#    Time: 5690 ns Started: 5690 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 5690
+# There should be no rvalid when we the LSU is IDLE                 5710
+# There should be no rvalid when we the LSU is IDLE                 5730
+# There should be no rvalid when we the LSU is IDLE                 5750
+# There should be no rvalid when we the LSU is IDLE                 5770
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -296,38 +327,39 @@
 # inst is 1100 0000 0011 1011 0010 0010 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 5
 # op1= 3469528221 op2= 2307110931
-# current_pc = 00000000000000000000000010110000
-# current_pc = 11111111111110110010110010101110
+# current_pc = 00000000000000000000000010110000                       6580
+# current_pc = 11111111111110110010110010101110                       6600
 # driver store fetch
 # inst is 0000 0000 0101 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 6490
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                 6650
+# There should be no rvalid when we the LSU is IDLE                 6670
+# There should be no rvalid when we the LSU is IDLE                 6690
+# received result: 00000000000000000000000010110000                       6700
+# result = 32d'176      32h'000000b0
 # Sb: inst is 1100 0000 0011 1011 0010 0010 1110 1111
 # Sb: op1=3469528221 
 # Sb: op2=2307110931
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 6500: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 6500: reporter [JumpAndLink_FAIL] Actual next pc=4294651054 Expected next pc=    890545 
+# offset = 32h'fffb2c02 	32b'11111111111110110010110000000010
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 6700: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 6700: reporter [JumpAndLink_PASS] Actual next pc=4294651054 Expected next pc=4294651054 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 6510
-# There should be no rvalid when we the LSU is IDLE                 6530
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 6830
 # ** Warning: There was a grant without a request
-#    Time: 6830 ns Started: 6830 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 6850
+#    Time: 7030 ns Started: 7030 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 7030
 # ** Warning: There was a grant without a request
-#    Time: 6850 ns Started: 6850 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 6870
+#    Time: 7050 ns Started: 7050 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 7050
 # ** Warning: There was a grant without a request
-#    Time: 6870 ns Started: 6870 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 6890
+#    Time: 7070 ns Started: 7070 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 7070
 # ** Warning: There was a grant without a request
-#    Time: 6890 ns Started: 6890 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 6910
-# There should be no rvalid when we the LSU is IDLE                 6930
-# There should be no rvalid when we the LSU is IDLE                 6950
-# There should be no rvalid when we the LSU is IDLE                 6970
+#    Time: 7090 ns Started: 7090 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 7090
+# There should be no rvalid when we the LSU is IDLE                 7110
+# There should be no rvalid when we the LSU is IDLE                 7130
+# There should be no rvalid when we the LSU is IDLE                 7150
+# There should be no rvalid when we the LSU is IDLE                 7170
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -337,37 +369,38 @@
 # inst is 0011 0101 1001 1111 1101 1101 0110 1111
 # rs1 address = x and rs2 address = x and rd address = 26
 # op1= 3612753582 op2= 3888476879
-# current_pc = 00000000000000000000000010110000
-# current_pc = 00000000000011111101110000000100
+# current_pc = 00000000000000000000000010110000                       7980
+# current_pc = 00000000000011111101110000000100                       8000
 # driver store fetch
 # inst is 0000 0001 1010 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 7850
-# received result: 00000000000000000000000010110000
-# result = 176
+# There should be no rvalid when we the LSU is IDLE                 8050
+# There should be no rvalid when we the LSU is IDLE                 8070
+# received result: 00000000000000000000000010110000                       8100
+# result = 32d'176      32h'000000b0
 # Sb: inst is 0011 0101 1001 1111 1101 1101 0110 1111
 # Sb: op1=3612753582 
 # Sb: op2=3888476879
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 7860: reporter [JumpAndLink_FAIL] Actual register result=       176 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 7860: reporter [JumpAndLink_FAIL] Actual next pc=   1039364 Expected next pc=    519772 
+# offset = 32h'000fdb58 	32b'00000000000011111101101101011000
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 8100: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 8100: reporter [JumpAndLink_PASS] Actual next pc=   1039364 Expected next pc=   1039364 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 7870
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 8190
 # ** Warning: There was a grant without a request
-#    Time: 8190 ns Started: 8190 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 8210
+#    Time: 8430 ns Started: 8430 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 8430
 # ** Warning: There was a grant without a request
-#    Time: 8210 ns Started: 8210 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 8230
+#    Time: 8450 ns Started: 8450 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 8450
 # ** Warning: There was a grant without a request
-#    Time: 8230 ns Started: 8230 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 8250
+#    Time: 8470 ns Started: 8470 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 8470
 # ** Warning: There was a grant without a request
-#    Time: 8250 ns Started: 8250 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 8270
-# There should be no rvalid when we the LSU is IDLE                 8290
-# There should be no rvalid when we the LSU is IDLE                 8310
-# There should be no rvalid when we the LSU is IDLE                 8330
+#    Time: 8490 ns Started: 8490 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 8490
+# There should be no rvalid when we the LSU is IDLE                 8510
+# There should be no rvalid when we the LSU is IDLE                 8530
+# There should be no rvalid when we the LSU is IDLE                 8550
+# There should be no rvalid when we the LSU is IDLE                 8570
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -377,38 +410,39 @@
 # inst is 1110 0101 0111 0011 0000 1010 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 21
 # op1= 1160667530 op2= 3964351704
-# current_pc = 00000000000000000000000010110000
-# current_pc = 11111111111100110000111100000010
+# current_pc = 00000000000000000000000010110000                       9380
+# current_pc = 11111111111100110000111100000010                       9400
 # driver store fetch
 # inst is 0000 0001 0101 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                 9210
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                 9450
+# There should be no rvalid when we the LSU is IDLE                 9470
+# There should be no rvalid when we the LSU is IDLE                 9490
+# received result: 00000000000000000000000010110000                       9500
+# result = 32d'176      32h'000000b0
 # Sb: inst is 1110 0101 0111 0011 0000 1010 1110 1111
 # Sb: op1=1160667530 
 # Sb: op2=3964351704
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 9220: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 9220: reporter [JumpAndLink_FAIL] Actual next pc=4294119170 Expected next pc=    624603 
+# offset = 32h'fff30e56 	32b'11111111111100110000111001010110
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 9500: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 9500: reporter [JumpAndLink_PASS] Actual next pc=4294119170 Expected next pc=4294119170 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                 9230
-# There should be no rvalid when we the LSU is IDLE                 9250
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                 9550
 # ** Warning: There was a grant without a request
-#    Time: 9550 ns Started: 9550 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 9570
+#    Time: 9830 ns Started: 9830 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 9830
 # ** Warning: There was a grant without a request
-#    Time: 9570 ns Started: 9570 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 9590
+#    Time: 9850 ns Started: 9850 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 9850
 # ** Warning: There was a grant without a request
-#    Time: 9590 ns Started: 9590 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 9610
+#    Time: 9870 ns Started: 9870 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 9870
 # ** Warning: There was a grant without a request
-#    Time: 9610 ns Started: 9610 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                 9630
-# There should be no rvalid when we the LSU is IDLE                 9650
-# There should be no rvalid when we the LSU is IDLE                 9670
-# There should be no rvalid when we the LSU is IDLE                 9690
+#    Time: 9890 ns Started: 9890 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                 9890
+# There should be no rvalid when we the LSU is IDLE                 9910
+# There should be no rvalid when we the LSU is IDLE                 9930
+# There should be no rvalid when we the LSU is IDLE                 9950
+# There should be no rvalid when we the LSU is IDLE                 9970
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -418,37 +452,38 @@
 # inst is 0111 0101 1100 0101 0000 1101 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 27
 # op1= 1460999086 op2= 353361194
-# current_pc = 00000000000000000000000010110000
-# current_pc = 00000000000001010000100000001000
+# current_pc = 00000000000000000000000010110000                      10780
+# current_pc = 00000000000001010000100000001000                      10800
 # driver store fetch
 # inst is 0000 0001 1011 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                10570
-# received result: 00000000000000000000000010110000
-# result = 176
+# There should be no rvalid when we the LSU is IDLE                10850
+# There should be no rvalid when we the LSU is IDLE                10870
+# received result: 00000000000000000000000010110000                      10900
+# result = 32d'176      32h'000000b0
 # Sb: inst is 0111 0101 1100 0101 0000 1101 1110 1111
 # Sb: op1=1460999086 
 # Sb: op2=353361194
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 10580: reporter [JumpAndLink_FAIL] Actual register result=       176 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 10580: reporter [JumpAndLink_FAIL] Actual next pc=    329736 Expected next pc=    164958 
+# offset = 32h'0005075c 	32b'00000000000001010000011101011100
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 10900: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 10900: reporter [JumpAndLink_PASS] Actual next pc=    329736 Expected next pc=    329736 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                10590
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                10910
 # ** Warning: There was a grant without a request
-#    Time: 10910 ns Started: 10910 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                10930
+#    Time: 11230 ns Started: 11230 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                11230
 # ** Warning: There was a grant without a request
-#    Time: 10930 ns Started: 10930 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                10950
+#    Time: 11250 ns Started: 11250 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                11250
 # ** Warning: There was a grant without a request
-#    Time: 10950 ns Started: 10950 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                10970
+#    Time: 11270 ns Started: 11270 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                11270
 # ** Warning: There was a grant without a request
-#    Time: 10970 ns Started: 10970 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                10990
-# There should be no rvalid when we the LSU is IDLE                11010
-# There should be no rvalid when we the LSU is IDLE                11030
-# There should be no rvalid when we the LSU is IDLE                11050
+#    Time: 11290 ns Started: 11290 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                11290
+# There should be no rvalid when we the LSU is IDLE                11310
+# There should be no rvalid when we the LSU is IDLE                11330
+# There should be no rvalid when we the LSU is IDLE                11350
+# There should be no rvalid when we the LSU is IDLE                11370
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -458,38 +493,39 @@
 # inst is 0100 0010 1111 0010 0100 0001 1110 1111
 # rs1 address = x and rs2 address = x and rd address = 3
 # op1= 486945594 op2= 178932501
-# current_pc = 00000000000000000000000010110000
-# current_pc = 00000000000000100100110011011010
+# current_pc = 00000000000000000000000010110000                      12180
+# current_pc = 00000000000000100100110011011010                      12200
 # driver store fetch
 # inst is 0000 0000 0011 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                11930
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                12250
+# There should be no rvalid when we the LSU is IDLE                12270
+# There should be no rvalid when we the LSU is IDLE                12290
+# received result: 00000000000000000000000010110000                      12300
+# result = 32d'176      32h'000000b0
 # Sb: inst is 0100 0010 1111 0010 0100 0001 1110 1111
 # Sb: op1=486945594 
 # Sb: op2=178932501
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 11940: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 11940: reporter [JumpAndLink_FAIL] Actual next pc=    150746 Expected next pc=     75463 
+# offset = 32h'00024c2e 	32b'00000000000000100100110000101110
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 12300: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 12300: reporter [JumpAndLink_PASS] Actual next pc=    150746 Expected next pc=    150746 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                11950
-# There should be no rvalid when we the LSU is IDLE                11970
 # driver has started
-# There should be no rvalid when we the LSU is IDLE                12270
 # ** Warning: There was a grant without a request
-#    Time: 12270 ns Started: 12270 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                12290
+#    Time: 12630 ns Started: 12630 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                12630
 # ** Warning: There was a grant without a request
-#    Time: 12290 ns Started: 12290 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                12310
+#    Time: 12650 ns Started: 12650 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                12650
 # ** Warning: There was a grant without a request
-#    Time: 12310 ns Started: 12310 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                12330
+#    Time: 12670 ns Started: 12670 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                12670
 # ** Warning: There was a grant without a request
-#    Time: 12330 ns Started: 12330 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
-# There should be no rvalid when we the LSU is IDLE                12350
-# There should be no rvalid when we the LSU is IDLE                12370
-# There should be no rvalid when we the LSU is IDLE                12390
-# There should be no rvalid when we the LSU is IDLE                12410
+#    Time: 12690 ns Started: 12690 ns  Scope: top.dut.if_stage_i File: riscy/DUT/riscv_if_stage.sv Line: 416
+# There should be no rvalid when we the LSU is IDLE                12690
+# There should be no rvalid when we the LSU is IDLE                12710
+# There should be no rvalid when we the LSU is IDLE                12730
+# There should be no rvalid when we the LSU is IDLE                12750
+# There should be no rvalid when we the LSU is IDLE                12770
 # driver starting fetching
 # driver first load fetch
 # inst is 0000 0000 0000 0000 0010 0000 0000 0011
@@ -499,38 +535,42 @@
 # inst is 0011 0001 0010 0011 0000 0111 0110 1111
 # rs1 address = x and rs2 address = x and rd address = 14
 # op1= 1203347855 op2= 3687669943
-# current_pc = 00000000000000000000000010110000
-# current_pc = 00000000000000110000001110111110
+# current_pc = 00000000000000000000000010110000                      13580
+# current_pc = 00000000000000110000001110111110                      13600
 # driver store fetch
 # inst is 0000 0000 1110 0000 0010 0000 0010 0011
-# There should be no rvalid when we the LSU is IDLE                13290
-# received result: 00000000000000000000000000000000
-# result = 0
+# There should be no rvalid when we the LSU is IDLE                13650
+# There should be no rvalid when we the LSU is IDLE                13670
+# There should be no rvalid when we the LSU is IDLE                13690
+# received result: 00000000000000000000000010110000                      13700
+# result = 32d'176      32h'000000b0
 # Sb: inst is 0011 0001 0010 0011 0000 0111 0110 1111
 # Sb: op1=1203347855 
 # Sb: op2=3687669943
-# UVM_ERROR GUVM/inst_h/jal.svh(17) @ 13300: reporter [JumpAndLink_FAIL] Actual register result=         0 Expected register result=       180 
-# UVM_ERROR GUVM/inst_h/jal.svh(18) @ 13300: reporter [JumpAndLink_FAIL] Actual next pc=    197566 Expected next pc=     98873 
+# offset = 32h'00030312 	32b'00000000000000110000001100010010
+# UVM_INFO GUVM/inst_h/jal.svh(13) @ 13700: reporter [JumpAndLink_PASS] Actual register result=       176 Expected register result=       176 
+# UVM_INFO GUVM/inst_h/jal.svh(14) @ 13700: reporter [JumpAndLink_PASS] Actual next pc=    197566 Expected next pc=    197566 
 # Scoreboard started
-# There should be no rvalid when we the LSU is IDLE                13310
-# There should be no rvalid when we the LSU is IDLE                13330
 # driver has started
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 13600: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 14000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    5
+# UVM_INFO :   25
 # UVM_WARNING :    0
-# UVM_ERROR :   20
+# UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
 # []     1
-# [JumpAndLink_FAIL]    20
+# [JumpAndLink_PASS]    20
 # [Questa UVM]     2
 # [RNTST]     1
 # [TEST_DONE]     1
 # ** Note: $finish    : C:/questasim64_10.4e/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 13600 ns  Iteration: 60  Instance: /top
-# End time: 00:21:37 on Apr 13,2020, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 38
+#    Time: 14 us  Iteration: 60  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_10.4e/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# Stopped at C:/questasim64_10.4e/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# End time: 21:38:49 on Apr 14,2020, Elapsed time: 0:00:09
+# Errors: 0, Warnings: 39

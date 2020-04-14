@@ -1,7 +1,10 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 
-add wave -noupdate /top/dut/id_stage_i/registers_i/*
+add wave -noupdate /top/dut/id_stage_i/registers_i/riscv_register_file_i/mem 
+add wave -noupdate /top/dut/id_stage_i/imm_uj_type
+add wave -noupdate /top/dut/id_stage_i/pc_id_i
+add wave -noupdate /top/dut/*
 add wave -r /*
 
 TreeUpdate [SetDefaultTree]

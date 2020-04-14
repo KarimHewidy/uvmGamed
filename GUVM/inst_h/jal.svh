@@ -1,11 +1,12 @@
 function void verify_JumpAndLink(target_seq_item cmd_trans,GUVM_result_transaction res_trans);
 	bit [31:0]actual_r,exp_r,actual_npc,cpc,exp_npc,offset ; 
 	// cpc => current_pc, npc => next_pc, exp => expected, r => result in rd
-	cpc = cmd_trans.current_pc;
-	offset =  {12'b0,cmd_trans.immb20,cmd_trans.immb19_12,cmd_trans.immb11,cmd_trans.immb10_1};
+	cpc = cmd_trans.current_pc - 32'd4 ;
+	offset =  {{12{cmd_trans.immb20}},cmd_trans.immb19_12,cmd_trans.immb11,cmd_trans.immb10_1,1'b0};
+	$display("offset = 32h'%h 	32b'%b",offset,offset);
 	actual_npc = cmd_trans.next_pc; 
 	actual_r = res_trans.result;
-	exp_r = cpc + 32'b100 ;
+	exp_r = cpc + 32'd4 ;
 	exp_npc = cpc + offset;
 	if((exp_r == actual_r) && (exp_npc == actual_npc))
 	begin

@@ -106,7 +106,8 @@ interface GUVM_interface;
     
     // reveiving data from the DUT
     function logic [31:0] receive_data();
-        $display("received result: %b", data_wdata_o);
+        $display("received result: %b       %t", data_wdata_o,$time);
+        $display("result = 32d'%0d      32h'%h", data_wdata_o,data_wdata_o);
         monitor_h.write_to_monitor(data_wdata_o);
         return data_wdata_o; 
     endfunction 
@@ -114,10 +115,10 @@ interface GUVM_interface;
     // dealing with the register file with the following load and store functions
     task store(logic [31:0] inst);
         send_inst(inst);
-        repeat(6) begin 
+        repeat(10) begin 
             #10 clk_i=~clk_i;
         end
-        $display("result = %0d", receive_data());
+        receive_data();
         // out = receive_data();
         repeat(30) begin 
             #10 clk_i=~clk_i;
@@ -136,7 +137,7 @@ interface GUVM_interface;
     endtask
 
     function logic[31:0] get_pc();
-        $display("current_pc = %b", instr_addr_o);
+        $display("current_pc = %b       %t", instr_addr_o,$time);
         return instr_addr_o;
     endfunction
     
