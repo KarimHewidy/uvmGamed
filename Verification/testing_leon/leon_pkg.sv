@@ -61,6 +61,8 @@ package target_package;
                         begin
                             ay.rd = inst[29:25];
                             ay.imm22 = inst[21:0];
+                            ay.simm = {{10{inst[21]}},inst[21:0]};
+                            ay.zimm = {{10{0}},inst[21:0]};
                         end
                     3'b010, 3'b110, 3'b111 :
                         //branch & fp branch & co branch format 2
@@ -68,6 +70,8 @@ package target_package;
                             ay.a = inst[29];
                             ay.cond = inst[28:25];
                             ay.disp22 = inst[21:0];
+                            ay.simm = {{10{inst[21]}},inst[21:0]};
+                            ay.zimm = {{10{0}},inst[21:0]};
                         end
                     default: uvm_report_error("k.instruction", "k.instruction format not defined");
                 endcase
@@ -87,6 +91,8 @@ package target_package;
                     //format 3 register immediate
                     begin
                         ay.imm13 = inst[12:0];
+                        ay.simm = {{19{inst[12]}},inst[12:0]};
+                        ay.zimm = {{19{0}},inst[12:0]};
                     end
 
             end

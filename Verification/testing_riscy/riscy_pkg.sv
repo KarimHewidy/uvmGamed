@@ -51,7 +51,8 @@ package target_package;
 					//U-type
 					ay.immb31_12 = inst[31:12];
 					ay.rd = inst[11:7];
-					ay.simm = {{12{inst[31]}},inst[31:12]};
+					ay.simm = {inst[31:12],{12{0}}}; // they are shifted 12 bit to left as in ISA
+					ay.zimm = {inst[31:12],{12{0}}}; // they are shifted 12 bit to left as in ISA
 				end
 			J_type:
 				begin
@@ -62,6 +63,7 @@ package target_package;
 					ay.immb19_12 = inst[19:12];
 					ay.rd = inst[11:7];
 					ay.simm = {{12{inst[31]}},inst[19:12],inst[20],inst[30:21],1'b0};
+					ay.zimm = {{12{0}},inst[31],inst[20:12],inst[20],inst[30:21]};
 				end
 			I_type, I_type1:
 				begin
@@ -71,6 +73,7 @@ package target_package;
 					ay.funct3 = inst[14:12];
 					ay.rd = inst[11:7];
 					ay.simm = {{20{inst[31]}},inst[31:20]};
+					ay.zimm = {{20{0}},inst[31:20]};
 				end
 			I_type_shift:
 				begin
@@ -91,6 +94,7 @@ package target_package;
 								ay.funct3 = inst[14:12];
 								ay.rd = inst[11:7];
 								ay.simm = {{20{inst[31]}},inst[31:20]};
+								ay.zimm = {{20{0}},inst[31:20]};
 							end
 				end
 			I_type_fence:
@@ -117,7 +121,8 @@ package target_package;
 					ay.rs2 = inst[24:20];
 					ay.immb4_1 = inst[11:8];
 					ay.immb11 = inst[7];
-					ay.simm = {{20{inst[31]}},inst[7],inst[30:25],inst[11:8]};
+					ay.simm = {{20{inst[31]}},inst[7],inst[30:25],inst[11:8],1'b0};
+					ay.zimm = {{20{0}},inst[31],inst[7],inst[30:25],inst[11:8]};
 				end
 			S_type:
 				begin
@@ -128,6 +133,7 @@ package target_package;
 					ay.funct3 = inst[14:12];
 					ay.immb4_0 = inst[11:7];
 					ay.simm = {{20{inst[31]}},inst[31:25],inst[11:7]};
+					ay.zimm = {{20{0}},inst[31:25],inst[11:7]};
 				end
 			R_type:
 				begin
