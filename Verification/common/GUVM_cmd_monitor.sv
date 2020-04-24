@@ -19,7 +19,7 @@ class command_monitor extends uvm_component;
       bfm.command_monitor_h = this;
    endfunction : connect_phase
 
-   function void write_to_cmd_monitor(logic [31:0]inst,logic [31:0]op1,logic [31:0]op2,logic [31:0]simm,logic [31:0]data=0);
+   /*function void write_to_cmd_monitor(logic [31:0]inst,logic [31:0]op1,logic [31:0]op2,logic [31:0]simm,logic [31:0]data=0);
       GUVM_sequence_item cmd;
       cmd = new("cmd");
       cmd.inst = inst;
@@ -29,7 +29,14 @@ class command_monitor extends uvm_component;
       cmd.operand2 = op2;
       cmd.current_pc = bfm.get_cpc(); // getting current instruction pc 
       Drv2Sb_port.write(cmd); 
+   endfunction : write_to_cmd_monitor*/
+
+   function void write_to_cmd_monitor(GUVM_sequence_item cmd);
+      $display("cmd_monitor********************rd= %0d",cmd.rd);
+      cmd.current_pc = bfm.get_cpc(); // getting current instruction pc 
+      Drv2Sb_port.write(cmd); 
    endfunction : write_to_cmd_monitor
+
 
 endclass : command_monitor
 

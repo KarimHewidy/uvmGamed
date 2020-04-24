@@ -24,11 +24,17 @@ class GUVM_sequence extends uvm_sequence #(GUVM_sequence_item);
             if ($isunknown(command.rs1))
                 load1.load(0);
             else
+            begin
                 load1.load(command.rs1);//specify regx address
+                load1.rd=command.rs1;
+            end
             if ($isunknown(command.rs2))
                 load2.load(0);
             else
-                load2.load(command.rs2);//specify regx address   
+            begin
+                load2.load(command.rs2);//specify regx address  
+                load2.rd=command.rs2;
+            end 
             store.store(command.rd);//specify regz address
 
 			//specify regx and regy data

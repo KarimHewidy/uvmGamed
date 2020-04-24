@@ -1,4 +1,5 @@
 `include "GUVM_result_transaction.sv"
+`include "GUVM_history_transaction.sv"
 `include "GUVM_sequence_item.sv"
 `include "target_sequence_item.sv"
 `include "GUVM_sequence.sv"

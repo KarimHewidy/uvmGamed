@@ -1,4 +1,4 @@
-function void verify_JumpAndLink(GUVM_sequence_item cmd_trans,GUVM_result_transaction res_trans);
+function void verify_JumpAndLink(GUVM_sequence_item cmd_trans,GUVM_result_transaction res_trans,GUVM_history_transaction hist_trans);
 	bit [31:0]actual_r,exp_r,actual_npc,cpc,exp_npc,offset ; 
 	// cpc => current_pc, npc => next_pc, exp => expected, r => result in rd
 	cpc = cmd_trans.current_pc ;

@@ -27,6 +27,7 @@ class GUVM_driver extends uvm_driver #(target_seq_item);
             seq_item_port.get_next_item(cmd); //getting first instrucion in sequence (1st load)
                 $display("driver first load fetch");
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
+            bfm.monitor_cmd(cmd);
             bfm.load(cmd.inst, cmd.data); // drive it to dut through interface
             seq_item_port.item_done();
 
@@ -34,6 +35,7 @@ class GUVM_driver extends uvm_driver #(target_seq_item);
             seq_item_port.get_next_item(cmd); //getting second instrucion in sequence (2nd load)
                 $display("driver second load fetch");
                 $display("inst is %b %b %b %b %b %b %b %b", cmd.inst[31:28], cmd.inst[27:24], cmd.inst[23:20], cmd.inst[19:16], cmd.inst[15:12], cmd.inst[11:8], cmd.inst[7:4], cmd.inst[3:0]);
+            bfm.monitor_cmd(cmd);
             bfm.load(cmd.inst, cmd.data); // drive it to dut through interface
             seq_item_port.item_done();
 
@@ -45,6 +47,7 @@ class GUVM_driver extends uvm_driver #(target_seq_item);
                 $display("rs1 address = %0d and rs2 address = %0d and rd address = %0d", cmd.rs1, cmd.rs2, cmd.rd);
                 $display("op1= %0d op2= %0d",cmd.operand1,cmd.operand2);
                 //$display("simm= %h simm= %b",cmd.simm,cmd.simm);
+            bfm.monitor_cmd(cmd);
             bfm.verify_inst(cmd.inst,cmd.operand1,cmd.operand2,cmd.simm); // drive it to dut through interface
             seq_item_port.item_done();
 
@@ -52,6 +55,7 @@ class GUVM_driver extends uvm_driver #(target_seq_item);
             seq_item_port.get_next_item(cmd); //getting fourth instrucion in sequence (store)
                 $display("driver store fetch");
                 $display("inst is %b %b %b %b %b %b %b %b",cmd.inst[31:28],cmd.inst[27:24],cmd.inst[23:20],cmd.inst[19:16],cmd.inst[15:12],cmd.inst[11:8],cmd.inst[7:4],cmd.inst[3:0]);
+            bfm.monitor_cmd(cmd);
             bfm.store(cmd.inst); // drive it to dut through interface
             seq_item_port.item_done();
         end: cmd_loop

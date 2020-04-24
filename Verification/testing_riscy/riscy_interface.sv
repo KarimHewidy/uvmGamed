@@ -122,13 +122,15 @@ interface GUVM_interface(input  clk );
     
     // sending the instruction to be verified
     task verify_inst(logic [31:0] inst,logic [31:0]op1,logic [31:0]op2,logic [31:0]simm);
-      command_monitor_h.write_to_cmd_monitor(inst,op1,op2,simm);
       send_inst(inst); 
       toggle_clk(1);
       nop();
       get_npc();
     endtask
     
+    function void monitor_cmd(GUVM_sequence_item cmd);
+      command_monitor_h.write_to_cmd_monitor(cmd);
+    endfunction
     // reveiving data from the DUT
     function logic [31:0] receive_data();
         $display("received result: %b", data_wdata_o);

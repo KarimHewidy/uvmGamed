@@ -40,14 +40,18 @@ class GUVM_scoreboard extends uvm_scoreboard;
 
 	task run_phase(uvm_phase phase);
 		GUVM_sequence_item cmd_trans;	// stores drived transaction
-		GUVM_result_transaction res_trans;	// stores result transaction 
+		GUVM_result_transaction res_trans;	// stores result transaction
+		GUVM_history_transaction hist_trans;
 		bit [31:0] expected1,operand1,operand2,imm,verified_inst;	// stores processed operands data
 		integer i;	// index of for loop
 		integer valid;	// stores instruction validity in the used core
+		hist_trans = new("hist_trans"); 
 		forever begin
 			$display("Scoreboard started");
 			drv_fifo.get(cmd_trans); // wait for driver to send drived transaction and get it
-			mon_fifo.get(res_trans); // wait for monitor to send result transaction and get it
+			if (cmd_trans.v == 1)
+				mon_fifo.get(res_trans); // wait for monitor to send result transaction and get it
+			$display("Sc********************rd= %0d",cmd_trans.rd);
 			operand1 = cmd_trans.operand1; 
 			operand2 = cmd_trans.operand2;
 			verified_inst = cmd_trans.inst;
@@ -66,15 +70,22 @@ class GUVM_scoreboard extends uvm_scoreboard;
 			if(valid == 0) begin // if valid still zero then instruction isn't found in opcodes array
 				`uvm_fatal("instruction fail", $sformatf("Sb: instruction not in pkg and its %b %b %b %b %b %b %b %b", verified_inst[31:28], verified_inst[27:24], verified_inst[23:20], verified_inst[19:16], verified_inst[15:12], verified_inst[11:8], verified_inst[7:4], verified_inst[3:0]))
 			end
+			$display("si_a[i] is %s in index %0d",si_a[i].name,i);
 			case (si_a[i].name) // determining which instuction we verify  
 				"A":begin // add two registers
-					verify_add(cmd_trans,res_trans);
+					verify_add(cmd_trans,res_trans,hist_trans);
 				end
 				"test":begin // temp instruction 
-					verify_test(cmd_trans,res_trans);
+					verify_test(cmd_trans,res_trans,hist_trans);
 				end
 				"Jal":begin // Jump and link
-					verify_JumpAndLink(cmd_trans,res_trans);
+					verify_JumpAndLink(cmd_trans,res_trans,hist_trans);
+				end
+				"Load":begin // Jump and link
+					verify_load(cmd_trans,res_trans,hist_trans);
+				end
+				"Store":begin
+					
 				end
 				default:`uvm_fatal("instruction fail", $sformatf("instruction is not add its %h", si_a[i]))
 			endcase

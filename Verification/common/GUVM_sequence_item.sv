@@ -8,7 +8,8 @@ class GUVM_sequence_item extends uvm_sequence_item;
    rand logic [31:0] inst;
    rand logic [31:0] data;// the effective data that should be stored inside memory 
    logic [31:0] zimm,simm,operand1,operand2,current_pc;// the 2 operands that shoould be at the registers
-   logic v; 
+   logic [4:0]rs1,rs2,rd;
+   logic v=0; 
 
    
    protected function logic [31:0] generate_instruction(opcode target_instruction );
